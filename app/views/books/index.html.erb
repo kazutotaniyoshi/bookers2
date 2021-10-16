@@ -9,11 +9,20 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li><a>><%= link_to "Home", new_user_session_path %></a></li>
-          <li><a class="fas fa-users nav-link text-light" href="/users"> Users</a></li>
-          <li><a class="fas fa-book-open nav-link text-light" href="/books"> Books</a></li>
+          <li><a><%= link_to "Users", usre_path %></a></li>
+          <li><a><%= link_to "Books", books_path %></a></li>
           <li><a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"> Log out</a></li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
+<main>
+        <p id="notice"></p>
+        <div class='container px-5 px-sm-0'>
+  
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <table class="table table-striped">
+        
