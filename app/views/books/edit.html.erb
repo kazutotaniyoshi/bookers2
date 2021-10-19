@@ -3,12 +3,10 @@
         <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-    <h2>User info</h2>
+    <h2>Editing Book</h2>
     <%= form_with model:@user, local:true do |f| %>
-      <label for="inputName">Name</label>
-      <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-      <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-      <label for="inputImage">Image</label>
-      <label for="inputIintroduction">introduction</label>
+      <label for="inputTitle">Title</label>
+      <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:""%>
+      <label for="inputBody">Image</label>
       <%= f.submit "Update User" %>
     <% end %>
