@@ -1,15 +1,22 @@
 class UsersController < ApplicationController
+
+  def index
+    @users =User.page(params[:page]).reverse_order
+    @user = current_user
+  end
+
   def show
-    @users = User.find(params[:id])
-    @user = @user.books.page(params[:page]).reverse_order
+    @user = User.find(params[:id])
+    @user_book = @user.books.page(params[:page]).reverse_order
+    @book = Book.new
   end
 
   def edit
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user.id)
   end
@@ -19,10 +26,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
-  
-  def index
-    @users =User.all
-    @user =  User.find(params[:id])
-  end
+
 
 end
