@@ -36,7 +36,12 @@
     </div>
   </nav>
 </header>
-
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class:"notice") %>
+    <% end %>
+    <div class="notifications">
+     <div class="notice"></div>
+    </div>
     <%= yield %>
   </body>
 </html>
