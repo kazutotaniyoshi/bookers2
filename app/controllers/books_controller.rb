@@ -9,7 +9,9 @@ class BooksController < ApplicationController
       if @book.save
       redirect_to book_path(@book.id),notice: 'successfully'
       else
-      render :new
+      @books = Book.page(params[:page]).reverse_order
+      @user = current_user
+      render :index
       end
     end
 
